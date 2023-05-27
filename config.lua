@@ -7,7 +7,7 @@ ShopWebhook = '' --this is what will display when someone sells or buys from naz
 --This is the nazar configuration
 Config.NazarSetup = {
     Music = true, --if true nazars rdo music will play
-    MusicVolume = 20, --audio level of the music 0-100
+    MusicVolume = 5, --audio level of the music 0-100
     nazarswagon = false, --if true this will spawn nazars wagon with nazar at the set coords. (The wagon can be hard to get set on the groun properly hence why this is optional, it will be tedious to get it set correctly, mainly will only work on perfectly flat ground)
     blip = true, --if true this will place a blip on nazar if not no blip will be there
     BlipHash = 2119977580, --blips hash
