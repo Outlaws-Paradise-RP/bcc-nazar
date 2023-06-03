@@ -8,7 +8,7 @@ ShopWebhook = '' --this is what will display when someone sells or buys from naz
 Config.NazarSetup = {
     Music = true, --if true nazars rdo music will play
     MusicVolume = 5, --audio level of the music 0-100
-    nazarswagon = false, --if true this will spawn nazars wagon with nazar at the set coords. (The wagon can be hard to get set on the groun properly hence why this is optional, it will be tedious to get it set correctly, mainly will only work on perfectly flat ground)
+    nazarswagon = true, --if true this will spawn nazars wagon with nazar at the set coords. (The wagon can be hard to get set on the groun properly hence why this is optional, it will be tedious to get it set correctly, mainly will only work on perfectly flat ground)
     blip = true, --if true this will place a blip on nazar if not no blip will be there
     BlipHash = 2119977580, --blips hash
     BlipName = "Madam Nazar", --blips name
@@ -16,11 +16,35 @@ Config.NazarSetup = {
     nazarspawn = { --You can add as many locations as you would like the script will randomly pick one each server restart!
         {
             nazarspawncoords = {x = -1047.19, y = 450.55, z = 56.81, h = 178.68}, --to get coords use xyz paste then manually add the heading to the table
-            nazarwagonspawncoords = {x = -1043.98, y = 451.66, z = 56.71, h = 53.18} --where the wagon will spawn
+            nazarwagonspawncoords = {x = -1043.98, y = 451.66, z = 56.71, h = 53.18}, --where the wagon will spawn
         },
         {
             nazarspawncoords = {x = -1526.77, y = -312.55, z = 142.55, h = 12.82},
             nazarwagonspawncoords = {x = -1522.95, y = -311.68, z = 142.39, h = 282.76},
+        },
+        {
+            nazarspawncoords = {x = 16.94, y = 1541.72, z = 113.69, h = 71.74},
+            nazarwagonspawncoords = {x = 10.49, y = 1539.5, z = 113.74, h = 346.74},
+        },
+        {
+            nazarspawncoords = {x = 2498.06, y = 1813.11, z = 86.47, h = 125.14},
+            nazarwagonspawncoords = {x = 2490.73, y = 1803.92, z = 86.32, h = 357.37},
+        },
+        {
+            nazarspawncoords = {x = 2475.5, y = 293.61, z = 71.73, h = 233.62},
+            nazarwagonspawncoords = {x = 2476.22, y = 282.52, z = 71.46, h = 315.63},
+        },
+        {
+            nazarspawncoords = {x = 1526.13, y = -742.1, z = 46.16, h = 356.07},
+            nazarwagonspawncoords = {x = 1537.11, y = -738.35, z = 45.87, h = 94.73},
+        },
+        {
+            nazarspawncoords = {x = -1524.11, y = -2091.08, z = 49.04, h = 123.69},
+            nazarwagonspawncoords = {x = -1531.17, y = -2103.46, z = 48.55, h = 38.18},
+        },
+        {
+            nazarspawncoords = {x = -4574.81, y = -2734.45, z = -10.6, h = 150.23},
+            nazarwagonspawncoords = {x = -4582.91, y = -2728.65, z = -10.86, h = 32.64},
         },
     }, --where she will be
     hintcooldown = 300000, --this is the cooldown between hints
@@ -77,6 +101,10 @@ Config.TreasureLocations = {
             },
             {
                 name = 'pipe',
+                count = 1,
+            },
+            {
+                name = 'WEAPON_THROWN_MOLOTOV',
                 count = 1,
             },
         },
@@ -136,6 +164,10 @@ Config.TreasureLocations = {
                 name = 'lockpick',
                 count = 1,
             },
+            {
+                name = 'WEAPON_THROWN_MOLOTOV',
+                count = 1,
+            },
         },
     },
     {
@@ -149,6 +181,10 @@ Config.TreasureLocations = {
             },
             {
                 name = 'stolenmerch',
+                count = 1,
+            },
+            {
+                name = 'WEAPON_THROWN_POISONBOTTLE',
                 count = 1,
             },
         },
@@ -168,6 +204,10 @@ Config.TreasureLocations = {
             },
             {
                 name = 'gold_nugget',
+                count = 2,
+            },
+            {
+                name = 'WEAPON_THROWN_DYNAMITE',
                 count = 2,
             },
         },
@@ -212,7 +252,6 @@ Config.CollectableCards = {
 --This is what she will sell to the player
 Config.Shop = {
     { itemdbname = 'lockpick', displayname = 'Lock Pick', price = '5', currencytype = 'gold'},
-    { itemdbname = 'dynamite', displayname = 'Dynamite', price = '20', currencytype = 'gold'},
     { itemdbname = 'robbingkit', displayname = 'Robbing Kit', price = '10', currencytype = 'gold'},
     { itemdbname = 'consumable_lock_breaker', displayname = 'Advanced Lock Pick', price = '10', currencytype = 'gold'},
     { itemdbname = 'blindfold', displayname = 'Blindfold', price = '6', currencytype = 'gold'},
@@ -220,16 +259,16 @@ Config.Shop = {
 
 -- This is what she will buy from the seller
 Config.Nazarssellableitems = {
-    { itemdbname = 'stolenmerch', displayname = 'Stolen Items', price = 12, currencytype = 'cash'},
-    { itemdbname = 'gold_nugget', displayname = 'Gold Nugget', price = 3, currencytype = 'cash'},
-    { itemdbname = 'diamond', displayname = 'Diamond', price = 10, currencytype = 'cash'},
-    { itemdbname = 'goldbar', displayname = 'Gold Bar', price = 50, currencytype = 'cash'},
-    { itemdbname = 'pipe', displayname = 'Pipe', price = 4, currencytype = 'cash'},
-    { itemdbname = 'rollingpaper', displayname = 'Rolling Paper', price = 2, currencytype = 'cash'},
-    { itemdbname = 'beer', displayname = 'Old Beer', price = 5, currencytype = 'cash'},
-    { itemdbname = 'book', displayname = 'Dusty Book', price = 3, currencytype = 'cash'},
-    { itemdbname = 'aligatorto', displayname = 'Alligator Tooth', price = 4, currencytype = 'cash'},
-    { itemdbname = 'heroin', displayname = 'Heroin', price = 5, currencytype = 'cash'},
+    { itemdbname = 'stolenmerch', displayname = 'Stolen Items', price = 12, currencytype = 'gold'},
+    { itemdbname = 'gold_nugget', displayname = 'Gold Nugget', price = 3, currencytype = 'gold'},
+    { itemdbname = 'diamond', displayname = 'Diamond', price = 10, currencytype = 'gold'},
+    { itemdbname = 'goldbar', displayname = 'Gold Bar', price = 50, currencytype = 'gold'},
+    { itemdbname = 'pipe', displayname = 'Pipe', price = 4, currencytype = 'gold'},
+    { itemdbname = 'rollingpaper', displayname = 'Rolling Paper', price = 2, currencytype = 'gold'},
+    { itemdbname = 'beer', displayname = 'Old Beer', price = 5, currencytype = 'gold'},
+    { itemdbname = 'book', displayname = 'Dusty Book', price = 3, currencytype = 'gold'},
+    { itemdbname = 'aligatorto', displayname = 'Alligator Tooth', price = 4, currencytype = 'gold'},
+    { itemdbname = 'heroin', displayname = 'Heroin', price = 5, currencytype = 'gold'},
 }
 
 ------------------- TRANSLATE HERE --------------
